@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Prediction Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .result-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        h2 {
+            color: #333;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        .explanation {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h2>AI Prediction Results</h2>
+        
+        <p><strong>Prediction:</strong> {{ prediction }}</p>
+
+        <div class="explanation">
+            <h3>Model Explanation:</h3>
+            {% for feature, value in explanation.items() %}
+                <p><strong>{{ feature }}:</strong> {{ value }}</p>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
